@@ -1,2 +1,9 @@
 <p>list-user works!</p>
 This is list user component
+
+
+<p *ngFor="let user of users">
+    {{user.id}}
+    {{user.username}}
+    <user-form></user-form>
+</p>
