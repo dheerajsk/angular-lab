@@ -5,12 +5,28 @@
         <b>This is from parent: </b> {{parentData}}
     </p>
 
-    <div>
+    <!-- <form>
         Firstname: <input type="text" name="firstname" (input)="handleFirstNameInput($event)">
 
         LastName: <input type="text" name="lastname" (input)="handleLastNameInput($event)">
+        Password: <input type="password" name="password" (input)="handleLastNameInput($event)">
 
         <button name="Submit" (click)="handleFormSubmit($event)">Submit</button>
-    </div>
+    </form> -->
 
+
+    <h2>Angular React Forms</h2>
+
+    <form [formGroup]="userForm" (ngSubmit)="handleFormSubmit()">
+
+        FirstName: <input type="text" formControlName="firstName" />
+
+        LastName: <input type="text" formControlName="lastName" />
+
+        Email: <input type="email" formControlName="email" />
+
+        Password: <input type="password" formControlName="password" />
+
+        <button>Signup</button>
+    </form>
 </div>
