@@ -13,6 +13,8 @@ export class UserFormComponent implements OnInit {
   @Input() parentData: string = "This is still child data";
   @Output() clickEvent = new EventEmitter();
   allowParentData: boolean = true;
+  formSubmitted: boolean;
+  formControls: any;
   // firstName: string;
   // lastName: string;
 
@@ -24,7 +26,8 @@ export class UserFormComponent implements OnInit {
       lastName: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(6)]]
-    })
+    });
+    this.formControls = this.userForm.controls;
   }
 
   // handleFirstNameInput(event: any) {
@@ -42,5 +45,13 @@ export class UserFormComponent implements OnInit {
   //   this.clickEvent.emit(this.firstName + " " + this.lastName);
   // }
 
+  handleFormSubmit(event) {
+    this.formSubmitted = true;
+    if (this.userForm.invalid) {
+      return;
+    } else {
+      alert("Form submitted");
+    }
+  }
 }
 

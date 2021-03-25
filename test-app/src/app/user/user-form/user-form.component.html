@@ -17,16 +17,27 @@
 
     <h2>Angular React Forms</h2>
 
-    <form [formGroup]="userForm" (ngSubmit)="handleFormSubmit()">
+    <form [formGroup]="userForm" (ngSubmit)="handleFormSubmit($event)">
 
-        FirstName: <input type="text" formControlName="firstName" />
+        FirstName: <input type="text" [ngClass]="{'invalid': formSubmitted && formControls.firstName.errors}"
+            formControlName="firstName" />
+        <br />
+        <span *ngIf="formSubmitted && formControls.firstName.errors">FirstName is requid</span>
+        <br />
+        <br />
 
-        LastName: <input type="text" formControlName="lastName" />
-
+        LastName: <input type="text" [ngClass]="{'invalid': formSubmitted && formControls.lastName.errors}"
+            formControlName="lastName" />
+        <span *ngIf="formSubmitted && formControls.lastName.errors">LastName is requid</span>
+        <br />
+        <br />
         Email: <input type="email" formControlName="email" />
-
+        <span *ngIf="formSubmitted && formControls.email.errors">Email should be valid</span>
+        <br />
+        <br />
         Password: <input type="password" formControlName="password" />
+        <span *ngIf="formSubmitted && formControls.password.errors">Password minlength 6 requried</span>
 
-        <button>Signup</button>
+        <button type="submit" name="submit">Signup</button>
     </form>
 </div>
