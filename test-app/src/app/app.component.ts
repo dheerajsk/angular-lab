@@ -11,6 +11,6 @@ export class AppComponent {
   message = "Waiting for user to submit form";
 
   handleUserFormClickEvent(event) {
-    this.message = "Form is submitted";
+    this.message = "Form is submitted by " + event;
   }
 }
