@@ -14,5 +14,13 @@ export class UserFormComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  handleFirstNameInput(event: any) {
+    console.log(event.target.value);
+  }
+
+  handleLastNameInput(event: any) {
+    console.log(event.target.value);
+  }
+
 }
 

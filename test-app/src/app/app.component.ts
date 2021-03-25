@@ -7,5 +7,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'test-app';
-  data = "This is from Parent";
+  data = "This is from Parent variable";
 }

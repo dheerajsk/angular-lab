@@ -1,4 +1,13 @@
-Displaying some data from parent
-<p *ngIf="allowParentData">
-    {{parentData}}
-</p>
+<div class="user-form">
+    Displaying some data from parent
+    <p *ngIf="allowParentData">
+        <b>This is from parent: </b> {{parentData}}
+    </p>
+
+    <form>
+        Firstname: <input type="text" name="firstname" (input)="handleFirstNameInput($event)">
+
+        LastName: <input type="text" name="lastname" (input)="handleLastNameInput($event)">
+    </form>
+
+</div>
