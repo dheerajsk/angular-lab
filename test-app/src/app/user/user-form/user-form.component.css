@@ -1,6 +1,7 @@
 .user-form{
     background-color: grey;
-    color: lightcyan;
+    color: white;
     padding: 20px;
     margin: 10px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }

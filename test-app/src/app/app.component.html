@@ -1,6 +1,9 @@
 <div class="root">
+<p>This is app component</p>
 
     <h3>Rendering User form</h3>
 
-    <user-form [parentData]="data"></user-form>
+    <user-form [parentData]="data" (clickEvent)="handleUserFormClickEvent($event)"></user-form> 
+
+    <p>{{message}}</p>
 </div>

@@ -1,4 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+
 
 @Component({
   selector: 'user-form',
@@ -9,6 +10,7 @@ export class UserFormComponent implements OnInit {
 
   constructor() { }
   @Input() parentData: string = "This is still child data";
+  @Output() clickEvent = new EventEmitter();
   allowParentData: boolean = true;
 
   ngOnInit(): void {
@@ -20,6 +22,11 @@ export class UserFormComponent implements OnInit {
 
   handleLastNameInput(event: any) {
     console.log(event.target.value);
+  }
+
+  handleFormSubmit(event) {
+    console.log(event);
+    this.clickEvent.emit(event);
   }
 
 }
