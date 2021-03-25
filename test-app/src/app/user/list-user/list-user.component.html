@@ -2,8 +2,7 @@
 This is list user component
 
 
-<p *ngFor="let user of users">
-    {{user.id}}
+<div *ngFor="let user of users">
+   <h4 userColor> {{user.id}}</h4>
     {{user.username}}
-    <user-form></user-form>
-</p>
+</div>

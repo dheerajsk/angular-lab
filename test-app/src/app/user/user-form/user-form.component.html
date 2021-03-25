@@ -31,7 +31,7 @@
         <span *ngIf="formSubmitted && formControls.lastName.errors">LastName is requid</span>
         <br />
         <br />
-        Email: <input type="email" formControlName="email" />
+        Email: <input type="email" formControlName="email" [ngClass]="{'invalid': formSubmitted && formControls.email.errors}" />
         <span *ngIf="formSubmitted && formControls.email.errors">Email should be valid</span>
         <br />
         <br />
