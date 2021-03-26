@@ -5,6 +5,7 @@ import { UserFormComponent } from './user-form/user-form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UsernameColorDirective } from './username-color.directive';
 import { ListPostComponent } from './list-post/list-post.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -12,7 +13,8 @@ import { ListPostComponent } from './list-post/list-post.component';
   imports: [
     CommonModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   exports: [ListUserComponent, UserFormComponent, ListPostComponent],
   providers:[]

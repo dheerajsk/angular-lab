@@ -1,12 +1,20 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { PostModel } from './list-post/post.model';
+import { map } from 'rxjs/operators';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PostService {
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
+  
+  getPostsAsync(): Observable<PostModel[]> {
+    const url = "https://jsonplaceholder.typicode.com/posts";
+    return this.http.get(url).pipe(map((res: PostModel[]) => res));
+  }
 
   getPosts(): PostModel[] {
 
@@ -20,6 +28,6 @@ export class PostService {
     posts.push(post3);
     posts.push(post4);
     return posts;
-    
+
   }
 }
