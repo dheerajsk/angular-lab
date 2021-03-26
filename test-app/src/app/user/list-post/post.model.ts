@@ -3,13 +3,13 @@
 export class PostModel {
 
     constructor(userid, id, title, body) {
-        this.userID = userid;
+        this.userId = userid;
         this.id = id;
         this.title = title;
         this.body = body;
     }
 
-    userID: number;
+    userId: number;
     id: number;
     title: string;
     body: string;

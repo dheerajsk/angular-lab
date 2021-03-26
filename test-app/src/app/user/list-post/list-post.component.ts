@@ -16,7 +16,17 @@ export class ListPostComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.posts = this.postService.getPosts();
+    this.postService.getPostAsync().subscribe(
+      (result) => {
+        this.posts = result;
+      },
+      (err) => {
+        console.log(err);
+      },
+      () => {
+        console.log("Completed");
+      }
+    );
   }
 
 }

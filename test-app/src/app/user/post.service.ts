@@ -11,8 +11,8 @@ export class PostService {
 
   constructor(private http: HttpClient) { }
   
-  getPostsAsync(): Observable<PostModel[]> {
-    const url = "https://jsonplaceholder.typicode.com/posts";
+  getPostAsync(): Observable<PostModel[]> {
+    const url = 'https://jsonplaceholder.typicode.com/posts';
     return this.http.get(url).pipe(map((res: PostModel[]) => res));
   }
 
